@@ -60,8 +60,9 @@ export default {
 
 <button @click="buscador(buscar)" class="bg-orange-400 border border-black">enviar</button>
   <br>
-<button v-if="pagina!==1" @click="$event => navpag(pagina--)">anterior</button>
-<button v-if="pagina!==this.info.pages" @click="$event => navpag(pagina++)">siguiente</button>
+  <br>
+<button v-if="pagina!==1" @click="$event => navpag(pagina--) " class="Boton bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white font-bold py-2 px-4 rounded">Anterior</button> 
+<button v-if="pagina!==this.info.pages" @click="$event => navpag(pagina++)" class="bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white font-bold py-2 px-4 rounded">Siguiente</button>
 
 
   <ul>
@@ -84,5 +85,9 @@ export default {
   }
   .person{
     display: block;
+  }
+
+  .Boton{
+    margin: 0px 10px 8px 5px;
   }
 </style>
