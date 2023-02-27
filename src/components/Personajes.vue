@@ -10,6 +10,9 @@ export default {
       info: [],
       personajes: [],
       buscar:'',
+      pagina:1,
+      anterior:null,
+      siguiente:null,
     }
   },
 
@@ -33,6 +36,17 @@ export default {
       })
 
     },
+    navpag(num){
+      API_URL='https://rickandmortyapi.com/api/character/?page='+this.pagina
+      console.log(API_URL)
+      axios.get(API_URL)
+      .then((response) => {
+        console.log(response.config)
+        this.info = response.data.info;
+        this.personajes = response.data.results;
+      })
+
+    },
 
   },
 
@@ -44,7 +58,11 @@ export default {
   <h2>Hay {{ info.count }} personajes en el programa de Rick & Morty</h2>
   <input type="text" v-model="buscar" class="border border-black">
 
-  <button @click="buscador(buscar)" class="bg-orange-400 border border-black">enviar</button>
+<button @click="buscador(buscar)" class="bg-orange-400 border border-black">enviar</button>
+  <br>
+<button v-if="pagina!==1" @click="$event => navpag(pagina--)">anterior</button>
+<button v-if="pagina!==this.info.pages" @click="$event => navpag(pagina++)">siguiente</button>
+
 
   <ul>
     <div>
@@ -52,6 +70,7 @@ export default {
       <div class="border border-black uul" style="margin: 10px 10px 10px 10px">
         <a class="person">id:{{ p.id }}</a>
         <a class="person">{{ p.name }} </a> 
+        <a class="person">{{ p.species }} </a> 
         <img v-bind:src=" p.image" alt="Rick y Morty">
       </div>
     </li>
