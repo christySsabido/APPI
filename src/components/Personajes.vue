@@ -65,13 +65,13 @@ export default {
 
 
   <ul>
-    <div>
+    <div class="contenedor">
     <li v-for="p in personajes" >
       <div class="border border-black uul" style="margin: 10px 10px 10px 10px">
-        <a class="person">id:{{ p.id }}</a>
-        <a class="person">{{ p.name }} </a> 
-        <a class="person">{{ p.species }} </a> 
         <img v-bind:src=" p.image" alt="Rick y Morty">
+        <a class="person">Id: {{ p.id }}</a>
+        <a class="person">Nombre: {{ p.name }} </a> 
+        <a class="person">Especie: {{ p.species }} </a> 
       </div>
     </li>
     </div>
@@ -84,6 +84,9 @@ export default {
   }
   .person{
     display: block;
+    margin: 5px 10px 0px 80px;
+    font-weight: 700;
+    font-size: 24px;
   }
 
   .Boton{
@@ -92,5 +95,11 @@ export default {
 
   .envi{
     margin: 0px 10px 8px 6px;
+  }
+
+  .contenedor{
+    background-image: url(https://img.freepik.com/vector-gratis/fondo-galaxia-acuarela-creativa_79603-1388.jpg);
+    background-size: cover;
+    margin-bottom: 100 px;
   }
 </style>
