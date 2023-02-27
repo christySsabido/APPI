@@ -11,9 +11,9 @@ import HelloWorld from "./components/HelloWorld.vue";
       <HelloWorld msg="Personajes de Rick & Morty" />
 
       <nav class="opcion font-bold">
-        <RouterLink to="/"><a class="text-2xl">Inicio</a></RouterLink>
-        <RouterLink to="/personajes"><a class="text-2xl">Personajes</a></RouterLink>
-        <RouterLink to="/about"><a class="text-2xl">Acerca de</a></RouterLink>
+        <RouterLink to="/"><a class="inicio text-2xl ">Inicio</a></RouterLink>
+        <RouterLink to="/personajes"><a class="inicio text-2xl">Personajes</a></RouterLink>
+        <RouterLink to="/about"><a class="inicio text-2xl">Acerca de</a></RouterLink>
       </nav>
     </div>
 
@@ -33,6 +33,9 @@ header {
 
 }
 
+.inicio{
+  text-shadow: 2px 5px 2px darkcyan;
+}
 .base{
   background-image: url(https://www.xtrafondos.com/descargar.php?id=9235&resolucion=3840x2160); 
   background-size: cover;

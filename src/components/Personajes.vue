@@ -27,7 +27,6 @@ export default {
   methods: {
     buscador(buscar) {
       API_URL='https://rickandmortyapi.com/api/character/?name='+buscar
-      console.log(API_URL)
       axios.get(API_URL)
       .then((response) => {
         console.log(response.config)
@@ -58,11 +57,11 @@ export default {
   <h2>Hay {{ info.count }} personajes en el programa de Rick & Morty</h2>
   <input type="text" v-model="buscar" class="border border-black">
 
-<button @click="buscador(buscar)" class="bg-orange-400 border border-black">enviar</button>
+<button @click="buscador(buscar)" class="envi bg-green-500 shadow-lg shadow-green-500/50 text-white font-bold py-1 px-3 rounded border-black" >Enviar</button>
   <br>
   <br>
-<button v-if="pagina!==1" @click="$event => navpag(pagina--) " class="Boton bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white font-bold py-2 px-4 rounded">Anterior</button> 
-<button v-if="pagina!==this.info.pages" @click="$event => navpag(pagina++)" class="bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white font-bold py-2 px-4 rounded">Siguiente</button>
+<button v-if="pagina!==1" @click="$event => navpag(pagina--) " class="Boton bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white font-bold py-1 px-3 rounded">Anterior</button> 
+<button v-if="pagina!==this.info.pages" @click="$event => navpag(pagina++)" class="bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white font-bold py-1 px-3 rounded">Siguiente</button>
 
 
   <ul>
@@ -89,5 +88,9 @@ export default {
 
   .Boton{
     margin: 0px 10px 8px 5px;
+  }
+
+  .envi{
+    margin: 0px 10px 8px 6px;
   }
 </style>

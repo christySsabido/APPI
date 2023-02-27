@@ -20,6 +20,7 @@ h1 {
   font-size: 3rem;
   top: -10px;
   font-style: italic;
+  text-shadow: 2px 5px 2px orange;
 
 }
 .green{
