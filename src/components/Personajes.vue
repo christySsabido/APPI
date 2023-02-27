@@ -9,7 +9,7 @@ export default {
     return {
       info: [],
       personajes: [],
-      cont:2
+      buscar:'',
     }
   },
 
@@ -22,8 +22,8 @@ export default {
   },
 
   methods: {
-    pag(num) {
-      API_URL='https://rickandmortyapi.com/api/character/?page='+num
+    buscador(buscar) {
+      API_URL='https://rickandmortyapi.com/api/character/?name='+buscar
       console.log(API_URL)
       axios.get(API_URL)
       .then((response) => {
@@ -31,8 +31,9 @@ export default {
         this.info = response.data.info;
         this.personajes = response.data.results;
       })
-      this.cont++
-    }
+
+    },
+
   },
 
 }
@@ -41,10 +42,28 @@ export default {
 
 <template>
   <h2>Hay {{ info.count }} personajes en el programa de Rick & Morty</h2>
-  <button @click="pag(cont)">página {{ cont }}</button>
+  <input type="text" v-model="buscar" class="border border-black">
+
+  <button @click="buscador(buscar)" class="bg-orange-400 border border-black">enviar</button>
+
   <ul>
-    <li v-for="p in personajes">
-      <a >{{ p.name }} id:{{ p.id }}</a> 
+    <div>
+    <li v-for="p in personajes" >
+      <div class="border border-black uul" style="margin: 10px 10px 10px 10px">
+        <a class="person">id:{{ p.id }}</a>
+        <a class="person">{{ p.name }} </a> 
+        <img v-bind:src=" p.image" alt="Rick y Morty">
+      </div>
     </li>
+    </div>
   </ul>
 </template>
+
+<style type="text/css">
+  .uul{
+    padding: 15px;
+  }
+  .person{
+    display: block;
+  }
+</style>

@@ -4,24 +4,20 @@ import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <header class="base bg-center">
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
+  <header class="base bg-center ">
+    
 
     <div class="wrapper">
       <HelloWorld msg="Personajes de Rick & Morty" />
 
-      <nav>
-        <RouterLink to="/">Inicio</RouterLink>
-        <RouterLink to="/personajes">Personajes</RouterLink>
-        <RouterLink to="/about">Acerca de</RouterLink>
+      <nav class="opcion font-bold">
+        <RouterLink to="/"><a class="text-2xl">Inicio</a></RouterLink>
+        <RouterLink to="/personajes"><a class="text-2xl">Personajes</a></RouterLink>
+        <RouterLink to="/about"><a class="text-2xl">Acerca de</a></RouterLink>
       </nav>
     </div>
+
+    
   </header>
 
   <RouterView />
@@ -32,13 +28,21 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 }
+.opcion{
+  margin: 180px 250px 0px 170px;
+
+}
 
 .base{
   background-image: url(https://www.xtrafondos.com/descargar.php?id=9235&resolucion=3840x2160); 
   background-size: cover;
   margin-bottom: 500 px;
-}
 
+}
+.wrapper{
+  margin: 10px 10px 10px 450px;
+
+}
 .logo {
   display: block;
   margin: 0 auto 2rem;
