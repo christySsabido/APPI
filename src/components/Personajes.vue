@@ -54,10 +54,10 @@ export default {
 </script>
 
 <template>
-  <h2>Hay {{ info.count }} personajes en el programa de Rick & Morty</h2>
-  <input type="text" v-model="buscar" class="border border-black">
+  <h2 class="text-center">Hay {{ info.count }} personajes en el programa de Rick & Morty</h2>
+  <input type="text" v-model="buscar" class="border border-2 border-lime-500 w-96">
 
-<button @click="buscador(buscar)" class="envi bg-green-500 shadow-lg shadow-green-500/50 text-white font-bold py-1 px-3 rounded border-black" >Enviar</button>
+<button @click="buscador(buscar)" class="envi bg-green-500 shadow-lg shadow-green-500/50 text-white font-bold py-1 px-3 rounded border-black" >Buscar</button>
   <br>
   <br>
 <button v-if="pagina!==1" @click="$event => navpag(pagina--) " class="Boton bg-cyan-500 shadow-lg shadow-cyan-500/50 text-white font-bold py-1 px-3 rounded">Anterior</button> 
@@ -72,6 +72,8 @@ export default {
         <a class="person">Id: {{ p.id }}</a>
         <a class="person">Nombre: {{ p.name }} </a> 
         <a class="person">Especie: {{ p.species }} </a> 
+        <a class="person">Estado: {{ p.status }} </a> 
+        <a class="person">Género: {{ p.gender }} </a>  
       </div>
     </li>
     </div>
@@ -101,5 +103,8 @@ export default {
     background-image: url(https://img.freepik.com/vector-gratis/fondo-galaxia-acuarela-creativa_79603-1388.jpg);
     background-size: cover;
     margin-bottom: 100 px;
+  }
+  .border{
+    margin: 25px 0px 10px 500px;
   }
 </style>
