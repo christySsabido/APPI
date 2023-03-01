@@ -29,7 +29,7 @@ header {
   max-height: 100vh;
 }
 .opcion{
-  margin: 180px 250px 0px 170px;
+  margin: 180px 220px 0px 170px;
 
 }
 

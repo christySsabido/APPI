@@ -67,7 +67,7 @@ export default {
   <ul>
     <div class="contenedor">
     <li v-for="p in personajes" >
-      <div class="border border-black uul" style="margin: 10px 10px 10px 10px">
+      <div class="border border-black uul " style="margin: 10px 10px 10px 10px">
         <img v-bind:src=" p.image" alt="Rick y Morty">
         <a class="person">Id: {{ p.id }}</a>
         <a class="person">Nombre: {{ p.name }} </a> 
@@ -92,7 +92,7 @@ export default {
   }
 
   .Boton{
-    margin: 0px 10px 8px 5px;
+    margin: 0px 10px 8px 600px;
   }
 
   .envi{
@@ -106,5 +106,15 @@ export default {
   }
   .border{
     margin: 25px 0px 10px 500px;
+  }
+
+  h1{
+    text-align: center;
+    font-family: ui-monospace;
+    font-size: 24px;
+  }
+  h2{
+    font-family: ui-monospace;
+    font-size: 24px;
   }
 </style>
